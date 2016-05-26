@@ -1,6 +1,10 @@
 # The deployment section should be excluded until
 # it is explicitly included in module 5
 
+dependencies:
+  pre:
+    - npm install -g istanbul
+
 deployment:
   dockerhub:
     branch: master
@@ -10,4 +14,8 @@ deployment:
 test:
   override:    
     - mocha
+
+general:
+  artifacts:
+    - ./coverage
 
